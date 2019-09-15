@@ -1,0 +1,61 @@
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="header">
+        <span id="headerTitle">Classroom</span> <!--image in future-->
+        <span id="headerSchoolName"></span>
+		<span id="headerClassName"></span>
+		<span id="headerSignIn" onclick="showSignIn()">Sign in</span>
+        <div id="SignInContainer">
+            <form id="SignInForm">
+                Username:<br>
+                <input id="SignInForm-username" type="text" name="username"><br>
+                Password:<br>
+                <input id="SignInForm-password" type="password" name="password">
+                <input id="SignInForm-submit" type="submit" value="Submit">
+            </form>
+        </div>
+        <span id="headerSignUp">Sign up</span>
+    </div>
+    <div id="createContainer">
+        <div id="createSchool" class="create" style="cursor: pointer">
+            <div>Create School</div>
+        </div>
+        <div id="createLesson" class="create" style="cursor: pointer">
+            <div>Create Lesson</div>
+        </div>
+    </div>
+  
+    <div id="myModal" class="modal">
+      <div id="schoolCreateContainer" class="createContainer">
+        <form id="schoolCreateForm" action="http://localhost:3000/createSchool" method="POST">
+          School name: <input name="schoolName" type="text"><br><br>
+          Private?: <input name="schoolPrivate" type="checkbox"><br><br>
+          Entry password: <input name="entryPassword" type="password"><br><br>
+          <button type="submit" id="schoolCreateFormSubmit">Submit</button>
+        </form>
+        <div class="close">&times;</div>
+      </div>
+
+      <div id="lessonCreateContainer" class="createContainer">
+        <form id="lessonCreateForm" action="http://localhost:3000/createLesson" method="POST">
+          <table>
+            <tr><td>Lesson name: <input name="lessonName" type="text"><br><br></td></tr>
+            <tr><td>Lesson description: <textarea name="lessonDesc" form="lessonCreateForm"></textarea><br><br></td></tr>
+            <tr><td>Subject: <input name="lessonSubject" type="text"><br><br></td></tr>
+            <tr><td>Private?: <input name="schoolPrivate" type="checkbox"><br><br></td></tr>
+            <tr><td>Entry password: <input name="entryPassword" type="password"><br><br></td></tr>
+            <tr><td><button type="submit" id="lessonCreateFormSubmit">Submit</button></td></tr>
+          </table>
+        </form>
+        <span class="close">&times;</span>
+      </div>
+    </div>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script src="main.js"></script>
+</body>

@@ -1,0 +1,42 @@
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/studentLesson/style.css">
+    <link href="/literallycanvas/literallycanvas.css" type="text/css" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-with-addons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.js"></script>
+
+    <script src="/literallycanvas/literallycanvas.js"></script>
+</head>
+
+<body>
+    <div id="header">
+      <span id="headerTitle">Classroom</span> <!--image in future-->
+      <span id="headerSchoolName"></span>
+		<span id="headerClassName"></span>
+		<span id="headerSignIn" onclick="showSignIn()">Sign in</span>
+      <div id="SignInContainer">
+        <form id="SignInForm">
+          Username:<br>
+          <input id="SignInForm-username" type="text" name="username"><br>
+          Password:<br>
+          <input id="SignInForm-password" type="password" name="password">
+          <input id="SignInForm-submit" type="submit" value="Submit">
+        </form>
+      </div>
+      <span id="headerSignUp">Sign up</span>
+    </div>
+    
+    <div id="lessonCanvas"></div>
+    <div id="chatContainer">
+      <ul id="messages"></ul>
+      <form id="chat" action="">
+        <input id="m" autocomplete="off" onkeydown="userTyping()"/><button>Send</button>
+      </form>
+    </div>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script src="/studentLesson/main.js"></script>
+</body>

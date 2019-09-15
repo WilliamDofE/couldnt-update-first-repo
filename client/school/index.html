@@ -1,0 +1,67 @@
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/school/style.css">
+</head>
+<body>
+  <div id="header">
+    <span id="headerTitle">Classroom</span> <!--image in future-->
+    <span id="headerSchoolName"></span>
+    <span id="headerClassName"></span>
+    <div id="headerSign">
+      <span id="headerSignIn" onclick="showSignIn()">Sign in</span>
+        <div id="SignInContainer">
+          <form id="SignInForm">
+            Username:<br>
+            <input id="SignInForm-username" type="text" name="username"><br>
+            Password:<br>
+            <input id="SignInForm-password" type="password" name="password">
+            <input id="SignInForm-submit" type="submit" value="Submit">
+          </form>
+      </div>
+      <span id="headerSignUp">Sign up</span>
+    </div>
+  </div>
+  
+  <div id="main">
+    <div id="schoolInfo">
+      <div id="schoolName">North Walsham High School</div>
+    </div>
+
+    <div id="schoolIntro">
+      <p>This is your School Homepage. Students and teachers will both see this when they log in to their school, but only teachers will have access to their unique features. Here you can see and change info about your school.</p>
+      <p>It's also where you create Lessons from. By clicking the 'Create Lesson' button below, you can make your own fully customizable lesson. Give it a try!</p>
+      <p></p>
+      <p></p>
+    </div>
+
+    <div id="createLesson" class="create" style="cursor: pointer">
+      <div id="createLessonTitle">Create Lesson</div>
+    </div>
+  </div>
+  
+  <div id="myModal" class="modal">
+    <div id="lessonCreateContainer" class="createContainer">
+      <form id="lessonCreateForm" action="http://localhost:3000/teacherLesson" method="POST">
+        <table>
+          <tbody>
+            <tr><td>User name: </td><td><input name="userName" type="text"></td><br><br></tr>
+            <tr><td>Lesson name: </td><td><input name="lessonName" type="text"></td><br><br></tr>
+            <tr><td>Lesson description: </td><td><textarea name="lessonDesc" form="lessonCreateForm"></textarea></td><br><br></tr>
+            <tr><td>Subject: </td><td><input name="lessonSubject" type="text"></td><br><br></tr>
+            <tr><td>Private?: </td><td><input name="schoolPrivate" type="checkbox"></td><br><br></tr>
+            <tr><td>Entry password: </td><td><input name="entryPassword" type="password"></td><br><br></tr>
+            <tr><td>Teacher: </td><td><input name="lessonTeacher" type="checkbox"></td><br><br><tr>
+            <tr><td><button type="submit" id="lessonCreateFormSubmit">Submit</button></td><br><br></tr>
+          </tbody>
+        </table>
+      </form>
+      <span class="close">&times;</span>
+    </div>
+  </div>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+  <script src="/school/main.js"></script>
+</body>
+</html>
